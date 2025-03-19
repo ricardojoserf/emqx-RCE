@@ -9,27 +9,35 @@ The code in this repository is mostly based on one of the latest releases of the
 
 ## Plugin Compilation
 
-As a prerequisite, you need to install make, cmake, Erlang and rebar3.
+1. Install make, cmake, Erlang and rebar3.
 
-1. Create the necessary directory and clone the plugin repository:
+```shell
+sudo apt install -y make cmake build-essential libssl-dev libncurses5-dev
+sudo apt install -y erlang
+wget https://s3.amazonaws.com/rebar3/rebar3
+chmod +x rebar3
+sudo mv rebar3 /usr/local/bin/
+```
+
+2. Create the necessary directory and clone the plugin repository:
 
 ```shell
 mkdir -p ~/.config/rebar3/templates/emqx-plugin-template
 git clone https://github.com/ricardojoserf/emqx-RCE ~/.config/rebar3/templates/emqx-plugin-template
 ```
 
-2. (Optional) Modify the command to be executed by updating line 47 in "src/emqx_plugin_template.erl":
+3. (Optional) Modify the command to be executed by updating line 47 in "src/emqx_plugin_template.erl":
 
 ![img](https://raw.githubusercontent.com/ricardojoserf/ricardojoserf.github.io/refs/heads/master/images/emqx/Screenshot_1.png)
 
-3. Generate the plugin and build it:
+4. Generate the plugin as a tar.gz file:
 
 ```shell
 rebar3 new emqx-plugin my_emqx_plugin
 make -C my_emqx_plugin rel
 ```
 
-This process will generate a .tar.gz plugin file which you can install (and run) via the EMQX Dashboard under the "Plugin" section.
+5. Install and run via the EMQX Dashboard under the "Plugin" section.
 
 ----------------------
 
