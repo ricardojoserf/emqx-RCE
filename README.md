@@ -4,6 +4,7 @@ This is a malicious plugin for [EMQX Dashboard](https://github.com/emqx/emqx-das
 
 The code in this repository is mostly based on one of the latest releases of the [EMQX plugin template](https://github.com/emqx/emqx-plugin-template) repository.
 
+If you would like to give this a try, you can launch a Docker image as explained in [EMQX docs](https://docs.emqx.com/en/emqx/latest/deploy/install-docker.html).
 
 ----------------------
 
@@ -54,12 +55,10 @@ cp my_emqx_plugin/_build/default/emqx_plugrel/my_emqx_plugin-1.0.0.tar.gz .
 
 ## Disclosure
 
-Following discussions with the EMQX security team, they stated that this is not considered a vulnerability but rather a "feature" and have no objections to this repository being public.
+Following discussions with the EMQX security team in February and March 2025, they confirmed that this is not considered a vulnerability but rather a "feature" and have no objections to making this repository public.
 
-However, starting from version 5.8.6 (released on 03/25/25), this feature will be mitigated by introducing "a CLI command to explicitly allow the package before installing a plugin via the HTTP API or Dashboard, improving security and preventing unauthorized installations" ([source](https://docs.emqx.com/en/emqx/latest/changes/changes-ce-v5.html#_5-8-6)).
+However, starting from version 5.8.6 (released on 25/3/25), this feature will be mitigated by introducing "a CLI command to explicitly allow the package before installing a plugin via the HTTP API or Dashboard, improving security and preventing unauthorized installations" ([source](https://docs.emqx.com/en/emqx/latest/changes/changes-ce-v5.html#_5-8-6)).
 
 Therefore, in earlier versions having access to the EMQX Dashboard you can achieve RCE, but in versions after 5.8.6 you will get this error:
-
-
 
 ![img](https://raw.githubusercontent.com/ricardojoserf/ricardojoserf.github.io/refs/heads/master/images/emqx/Screenshot_2.png)
