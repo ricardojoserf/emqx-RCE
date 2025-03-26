@@ -54,6 +54,12 @@ cp my_emqx_plugin/_build/default/emqx_plugrel/my_emqx_plugin-1.0.0.tar.gz .
 
 ## Disclosure
 
-Following discussions with the EMQX security team, they do not consider this a vulnerability but a "feature" and have no objections to this repository being public.
+Following discussions with the EMQX security team, they stated that this is not considered a vulnerability but rather a "feature" and have no objections to this repository being public.
 
-However, versions 5.8.6 and higher will mitigate this feature by not using default credentials and disabling the plugin installation from the dashboard (it will only be available through the CLI).
+However, starting from version 5.8.6 (released on 03/25/25), this feature will be mitigated by introducing "a CLI command to explicitly allow the package before installing a plugin via the HTTP API or Dashboard, improving security and preventing unauthorized installations" ([source](https://docs.emqx.com/en/emqx/latest/changes/changes-ce-v5.html#_5-8-6)).
+
+Therefore, in earlier versions having access to the EMQX Dashboard you can achieve RCE, but in versions after 5.8.6 you will get this error:
+
+
+
+![img](https://raw.githubusercontent.com/ricardojoserf/ricardojoserf.github.io/refs/heads/master/images/emqx/Screenshot_2.png)
