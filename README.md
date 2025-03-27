@@ -1,8 +1,8 @@
 # EMQX Dashboard - RCE
 
-This is a malicious plugin for [EMQX Dashboard](https://github.com/emqx/emqx-dashboard) which allows to execute commands remotely.
+This is a malicious plugin for [EMQX Dashboard](https://docs.emqx.com/en/emqx/latest/dashboard/introduction.html) which allows to execute commands remotely.
 
-The code in this repository is mostly based on one of the latest releases of the [EMQX plugin template](https://github.com/emqx/emqx-plugin-template) repository.
+The code in this repository is mostly based on one of the latest releases of the [EMQX plugin template](https://github.com/emqx/emqx-plugin-template) repository, licensed under Apache 2.0.
 
 If you would like to give this a try, you can launch a Docker image as explained in [EMQX docs](https://docs.emqx.com/en/emqx/latest/deploy/install-docker.html).
 
