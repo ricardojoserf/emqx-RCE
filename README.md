@@ -25,8 +25,10 @@ asdf --version
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
 asdf install erlang 25.3
 asdf global erlang 25.3
-wget https://s3.amazonaws.com/rebar3/rebar3
-chmod +x rebar3
+git clone https://github.com/erlang/rebar3.git
+cd rebar3
+./bootstrap
+sudo chmod +x rebar3
 sudo mv rebar3 /usr/local/bin/
 ```
 
@@ -51,7 +53,9 @@ cp my_emqx_plugin/_build/default/emqx_plugrel/my_emqx_plugin-1.0.0.tar.gz .
 
 5. Install and run via the EMQX Dashboard under the "Plugin" section.
 
+
 ----------------------
+
 
 ## Disclosure
 
